@@ -1,0 +1,6 @@
+<% if (success && success.length) { %>
+<script>rhToast('<%= success.toString().replace(/\\/g, "\\\\").replace(/'/g, "\\'") %>', 'success');</script>
+<% } %>
+<% if (error && error.length) { %>
+<script>rhToast('<%= error.toString().replace(/\\/g, "\\\\").replace(/'/g, "\\'") %>', 'error');</script>
+<% } %>

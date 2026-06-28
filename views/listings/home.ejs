@@ -1,0 +1,384 @@
+<% layout("/layouts/boilerplate") %>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 hero-content fade-up">
+        <div class="hero-tagline">
+          <i class="fa-solid fa-fire" style="color:var(--orange);"></i>
+          #1 Recipe Platform in India
+        </div>
+        <h1 class="hero-title">
+          Cook with <span>Passion</span>,<br>Share with Love
+        </h1>
+        <p class="hero-subtitle">
+          Discover thousands of mouth-watering recipes from every cuisine. Join our community of food lovers, share your creations, and plan your meals like a pro.
+        </p>
+
+        <!-- Search Bar -->
+        <form class="hero-search" action="/listings" method="GET">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--grey);font-size:1rem;"></i>
+          <input type="text" name="q" placeholder="Search recipes, ingredients, cuisines…" autocomplete="off">
+          <button type="submit">
+            <i class="fa-solid fa-search"></i> Search
+          </button>
+        </form>
+
+        <!-- Quick category pills -->
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <a href="/listings?category=Breakfast" class="badge badge-grey" style="font-size:0.78rem;padding:6px 12px;cursor:pointer;text-decoration:none;">🍳 Breakfast</a>
+          <a href="/listings?category=Lunch" class="badge badge-grey" style="font-size:0.78rem;padding:6px 12px;cursor:pointer;text-decoration:none;">🥗 Lunch</a>
+          <a href="/listings?category=Dinner" class="badge badge-grey" style="font-size:0.78rem;padding:6px 12px;cursor:pointer;text-decoration:none;">🍛 Dinner</a>
+          <a href="/listings?diet=vegan" class="badge badge-green" style="font-size:0.78rem;padding:6px 12px;cursor:pointer;text-decoration:none;">🌱 Vegan</a>
+          <a href="/listings?category=Dessert" class="badge badge-orange" style="font-size:0.78rem;padding:6px 12px;cursor:pointer;text-decoration:none;">🍰 Desserts</a>
+        </div>
+
+        <!-- Hero stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Recipes</div>
+          </div>
+          <div style="width:1px;background:var(--border);"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">10K+</div>
+            <div class="hero-stat-label">Home Cooks</div>
+          </div>
+          <div style="width:1px;background:var(--border);"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">50+</div>
+            <div class="hero-stat-label">Cuisines</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 fade-up fade-up-delay-1 d-none d-lg-block">
+        <div class="hero-image-card">
+          <img src="/images/image.png" alt="Delicious Biryani" loading="eager">
+          <!-- Floating badges -->
+          <div class="hero-floating-badge hero-badge-top">
+            <div style="width:36px;height:36px;background:var(--primary-light);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--primary-dark);font-size:1rem;">🍴</div>
+            <div>
+              <div style="font-weight:700;font-size:0.82rem;color:var(--dark);">Today's Special</div>
+              <div style="font-size:0.72rem;color:var(--grey);">Chicken Biryani</div>
+            </div>
+          </div>
+          <div class="hero-floating-badge hero-badge-bottom">
+            <i class="fa-solid fa-star" style="color:var(--orange);font-size:1.1rem;"></i>
+            <div>
+              <div style="font-weight:700;font-size:0.82rem;color:var(--dark);">4.9 / 5</div>
+              <div style="font-size:0.72rem;color:var(--grey);">Average Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── POPULAR CATEGORIES ───────────────────────────────────── -->
+<section class="section-gap" style="background:var(--white);">
+  <div class="container">
+    <div class="section-heading">
+      <div class="tag"><i class="fa-solid fa-grid-2"></i> Browse</div>
+      <h2>Popular Categories</h2>
+      <p>Find your next favourite recipe by category</p>
+    </div>
+    <div class="row g-3 row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+      <div class="col">
+        <a href="/listings?category=Breakfast" class="category-card">
+          <div class="category-icon">🍳</div>
+          <h6>Breakfast</h6>
+        </a>
+      </div>
+      <div class="col">
+        <a href="/listings?category=Lunch" class="category-card">
+          <div class="category-icon">🥗</div>
+          <h6>Lunch</h6>
+        </a>
+      </div>
+      <div class="col">
+        <a href="/listings?category=Dinner" class="category-card">
+          <div class="category-icon">🍛</div>
+          <h6>Dinner</h6>
+        </a>
+      </div>
+      <div class="col">
+        <a href="/listings?category=Dessert" class="category-card">
+          <div class="category-icon">🍰</div>
+          <h6>Desserts</h6>
+        </a>
+      </div>
+      <div class="col">
+        <a href="/listings?category=Snacks" class="category-card">
+          <div class="category-icon">🥨</div>
+          <h6>Snacks</h6>
+        </a>
+      </div>
+      <div class="col">
+        <a href="/listings?diet=vegan" class="category-card">
+          <div class="category-icon">🌱</div>
+          <h6>Vegan</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED RECIPES ─────────────────────────────────────── -->
+<section class="section-gap">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+      <div>
+        <div class="tag" style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">
+          <i class="fa-solid fa-fire"></i> Trending
+        </div>
+        <h2 style="font-size:1.9rem;margin:0;">Featured Recipes</h2>
+      </div>
+      <a href="/listings" class="btn btn-outline-primary">
+        View All <i class="fa-solid fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+    <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+
+      <div class="col">
+        <div class="recipe-card">
+          <div class="recipe-card-img">
+            <img src="/images/samosa.png" alt="Samosa" loading="lazy">
+            <div class="recipe-card-overlay"></div>
+            <div class="recipe-card-badges"><span class="diet-badge diet-vegetarian">Vegetarian</span></div>
+            <div class="recipe-time-badge"><i class="fa-solid fa-clock"></i> 30 min</div>
+          </div>
+          <div class="recipe-card-body">
+            <div class="recipe-card-title">Crispy Samosa</div>
+            <div class="recipe-card-desc">Classic Indian snack with spiced potato filling, fried to golden perfection.</div>
+            <div class="recipe-card-meta">
+              <span><i class="fa-solid fa-eye"></i> 1.2K views</span>
+              <span><i class="fa-solid fa-star" style="color:var(--orange);"></i> 4.8</span>
+              <span style="margin-left:auto;">
+                <a href="/listings" class="btn btn-sm btn-primary">View</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="recipe-card">
+          <div class="recipe-card-img">
+            <img src="/images/image.png" alt="Biryani" loading="lazy">
+            <div class="recipe-card-overlay"></div>
+            <div class="recipe-card-badges"><span class="diet-badge diet-non-vegetarian">Non-Veg</span></div>
+            <div class="recipe-time-badge"><i class="fa-solid fa-clock"></i> 60 min</div>
+          </div>
+          <div class="recipe-card-body">
+            <div class="recipe-card-title">Chicken Biryani</div>
+            <div class="recipe-card-desc">Fragrant basmati rice layered with succulent marinated chicken and aromatic spices.</div>
+            <div class="recipe-card-meta">
+              <span><i class="fa-solid fa-eye"></i> 3.5K views</span>
+              <span><i class="fa-solid fa-star" style="color:var(--orange);"></i> 4.9</span>
+              <span style="margin-left:auto;">
+                <a href="/listings" class="btn btn-sm btn-primary">View</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="recipe-card">
+          <div class="recipe-card-img">
+            <img src="/images/paneertikka.png" alt="Paneer Tikka" loading="lazy">
+            <div class="recipe-card-overlay"></div>
+            <div class="recipe-card-badges"><span class="diet-badge diet-vegetarian">Vegetarian</span></div>
+            <div class="recipe-time-badge"><i class="fa-solid fa-clock"></i> 45 min</div>
+          </div>
+          <div class="recipe-card-body">
+            <div class="recipe-card-title">Paneer Tikka</div>
+            <div class="recipe-card-desc">Soft paneer cubes marinated in yogurt and spices, grilled to smoky perfection.</div>
+            <div class="recipe-card-meta">
+              <span><i class="fa-solid fa-eye"></i> 2.1K views</span>
+              <span><i class="fa-solid fa-star" style="color:var(--orange);"></i> 4.7</span>
+              <span style="margin-left:auto;">
+                <a href="/listings" class="btn btn-sm btn-primary">View</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="recipe-card">
+          <div class="recipe-card-img">
+            <img src="/images/pizza.png" alt="Pizza" loading="lazy">
+            <div class="recipe-card-overlay"></div>
+            <div class="recipe-card-badges"><span class="diet-badge diet-vegetarian">Vegetarian</span></div>
+            <div class="recipe-time-badge"><i class="fa-solid fa-clock"></i> 50 min</div>
+          </div>
+          <div class="recipe-card-body">
+            <div class="recipe-card-title">Homemade Pizza</div>
+            <div class="recipe-card-desc">Crispy crust, rich tomato sauce, melted cheese and your favourite toppings.</div>
+            <div class="recipe-card-meta">
+              <span><i class="fa-solid fa-eye"></i> 1.8K views</span>
+              <span><i class="fa-solid fa-star" style="color:var(--orange);"></i> 4.6</span>
+              <span style="margin-left:auto;">
+                <a href="/listings" class="btn btn-sm btn-primary">View</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MORE RECIPES SHOWCASE ────────────────────────────────── -->
+<section class="section-gap-sm" style="background:var(--white);">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-5">
+        <img src="/images/chikentahri.png" alt="Chicken Tandoori"
+          style="width:100%;height:360px;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);"
+          loading="lazy">
+      </div>
+      <div class="col-md-7">
+        <div class="tag" style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">
+          <i class="fa-solid fa-crown"></i> Editor's Pick
+        </div>
+        <h2 style="font-size:2rem;margin-bottom:14px;">Chicken Tandoori</h2>
+        <p style="color:var(--grey);font-size:0.92rem;margin-bottom:20px;line-height:1.8;">
+          A classic North Indian dish — marinated chicken cooked with basmati rice and warm spices. Slow-cooked to bring out deep, comforting flavours. Garnished with caramelized onions and fresh coriander.
+        </p>
+        <div class="d-flex gap-3 mb-24" style="margin-bottom:24px;">
+          <div class="d-flex align-items-center gap-2" style="font-size:0.85rem;color:var(--grey);">
+            <i class="fa-solid fa-clock" style="color:var(--primary);"></i> 50 mins
+          </div>
+          <div class="d-flex align-items-center gap-2" style="font-size:0.85rem;color:var(--grey);">
+            <i class="fa-solid fa-fire-flame-curved" style="color:var(--orange);"></i> Medium
+          </div>
+          <div class="d-flex align-items-center gap-2" style="font-size:0.85rem;color:var(--grey);">
+            <i class="fa-solid fa-users" style="color:var(--primary);"></i> 4 Servings
+          </div>
+        </div>
+        <a href="/listings" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-utensils"></i> Explore All Recipes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY RECIPE HAVEN ─────────────────────────────────────── -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-heading">
+      <div class="tag"><i class="fa-solid fa-sparkles"></i> Why Us</div>
+      <h2>Why Choose Recipe Haven?</h2>
+      <p>Everything you need to discover, cook, and share amazing food</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-globe"></i></div>
+          <h5>Diverse Cuisines</h5>
+          <p>Explore recipes from 50+ cuisines across India and around the world, all in one place.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-calendar-week"></i></div>
+          <h5>Meal Planning</h5>
+          <p>Plan your entire week's meals effortlessly with our intuitive weekly planner.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+          <h5>Smart Grocery Lists</h5>
+          <p>Auto-generate shopping lists from your chosen recipes and meal plan in one click.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-users"></i></div>
+          <h5>Vibrant Community</h5>
+          <p>Share recipes, follow creators, give ratings, and get inspired by fellow food lovers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ─────────────────────────────────────────── -->
+<section class="section-gap" style="background:var(--white);">
+  <div class="container">
+    <div class="section-heading">
+      <div class="tag"><i class="fa-solid fa-quote-left"></i> Testimonials</div>
+      <h2>What Our Community Says</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Recipe Haven transformed my cooking. I've tried over 30 recipes and every single one has been amazing. The meal planner is a game changer!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">P</div>
+            <div>
+              <div class="testimonial-name">Priya Sharma</div>
+              <div class="testimonial-role">Home Chef, Mumbai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I love how easy it is to add my own recipes and share them with the community. I've gained 200+ followers in just a month!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div>
+              <div class="testimonial-name">Rahul Verma</div>
+              <div class="testimonial-role">Food Blogger, Delhi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The grocery list feature saves me so much time every weekend. I plan the week, generate the list, and shop in 20 minutes flat!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">Anjali Patel</div>
+              <div class="testimonial-role">Working Mom, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ───────────────────────────────────────────── -->
+<section class="section-gap">
+  <div class="container">
+    <div class="cta-section">
+      <h2>Ready to Start Cooking?</h2>
+      <p>Join thousands of food lovers sharing their passion. Add your first recipe today — it's completely free.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap" style="position:relative;z-index:1;">
+        <a href="/signup" class="btn-white" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:999px;padding:12px 30px;font-weight:700;font-family:'Poppins',sans-serif;font-size:0.92rem;background:white;color:var(--primary-dark);border:none;cursor:pointer;transition:all 0.25s;">
+          <i class="fa-solid fa-rocket"></i> Get Started Free
+        </a>
+        <a href="/listings" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:999px;padding:12px 30px;font-weight:700;font-family:'Poppins',sans-serif;font-size:0.92rem;background:transparent;color:white;border:2px solid rgba(255,255,255,0.5);cursor:pointer;transition:all 0.25s;position:relative;z-index:1;">
+          <i class="fa-solid fa-compass"></i> Browse Recipes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
